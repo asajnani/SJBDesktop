@@ -9,7 +9,7 @@ const router = express.Router();
 
 var db = mysql.createPool({
   connectionLimit: 100,
-  host: "127.0.0.1",
+  host: "db",
   user: "newuser",
   password: "dehAAn55?",
   database: "userDB",
@@ -100,10 +100,8 @@ router.post("/reqdimension", (req, res) => {
   gearRatio = round(A2)
 
   console.log({gearRatio})
-  console.log("Would you like to change the gear ratio?")
-  console.log("SEE GEAR RATIO VERSUS PINION TEETH GRAPH FOR CIRC. THICK FACTOR FROM BEVEL GEAR SYSTEM BOOKLET AND FIND OUT CIRC. THICK. FACTOR")
-
-  var circularThicknessFactor = req.body.circularThickness
+  
+  var circularThicknessFactor = 0.71 //req.body.circularThickness
 
   var PD = req.body.PD
 
@@ -1264,7 +1262,7 @@ router.post("/reqdimension", (req, res) => {
   arr = conversion1(PAP)
   var arr2 = conversion2(PAG)
   console.log("FACE CONT. RAT. =         PITCH ANGLE........= " + arr[0] + " Degrees " + arr[1] + " Minutes ")
-  console.log("Pitch angle (gear)" + arr2[0] + " Degress " + arr[1] + " Minutes ")
+  console.log("Pitch angle (gear)" + arr2[0] + " Degress " + arr2[1] + " Minutes ")
 
   //4880 
   arr = conversion1(FAP)
@@ -1272,7 +1270,7 @@ router.post("/reqdimension", (req, res) => {
   arr2 = conversion2(FAG)
   console.log("MOD.F.CONT. RAT = ")
   console.log("FACE ANGLE OF BLANK = " + arr[0] + " Degrees " + arr[1] + " Minutes ")
-  console.log("FACE ANGLE OF BLANK (gear) " + arr2[0] + " Degrees " + arr[1] + " Minutes ")
+  console.log("FACE ANGLE OF BLANK (gear) " + arr2[0] + " Degrees " + arr2[1] + " Minutes ")
 
   //4900 
   console.log("OUT. CONE DIST. = " + AO)

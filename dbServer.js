@@ -33,6 +33,38 @@ app.use(require('./routes/createPage'));
 
 app.use(require('./routes/homepage')); 
 
+app.use(require('./routes/homepage_edited')); 
+
+app.use(require('./routes/face_width_calc')); 
+
+app.use(require('./routes/outer_cone_distance')); 
+
+app.use(require('./routes/pivot_distance')); 
+
+app.use(require('./routes/if_metric')); 
+
+app.use(require('./routes/finishing_pointwidth')); 
+
+app.use(require('./routes/pinion_ratio')); 
+
+app.use(require('./routes/check_pinion_ratio')); 
+
+app.use(require('./routes/check_gear_ratio')); 
+
+app.use(require('./routes/diff_sums')); 
+
+app.use(require('./routes/change_diameters')); 
+
+app.use(require('./routes/machine116')); 
+
+app.use(require('./routes/finish')); 
+
+app.use(require('./routes/newFaceWidthh')); 
+
+app.use(require('./routes/newPivotDistance')); 
+
+app.set('view engine', 'ejs')
+
 
 
 
@@ -54,7 +86,7 @@ db.getConnection( (err, connection)=> {
 
 
 app.listen(port,
-  ()=> console.log('Server started on port ${port}...'))
+  ()=> console.log('Server started on port ${PORT}...'))
 
 
 

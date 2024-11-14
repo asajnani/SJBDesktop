@@ -52,7 +52,7 @@ router.post("/login", (req, res)=> {
           console.log("Here is token -------->")
           console.log(token)
           //res.send(token)
-          res.redirect("/homepage")
+          res.redirect("/homepage_edited")
         } else {
           res.send("Password incorrect!")
         }
